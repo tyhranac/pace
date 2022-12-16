@@ -116,7 +116,7 @@ nav > ul {
 
     .hamburger-menu[aria-expanded="true"] {
         background: url("./assets/x-icon.svg");
-        background-repeat: none;
+        background-repeat: no-repeat;
     }
 }
 
