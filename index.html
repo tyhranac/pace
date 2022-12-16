@@ -14,19 +14,20 @@
 </head>
 <body>
     <header>
+        <button class="hamburger-menu" aria-controls="nav-pages" aria-expanded="false"><span class="sr-only">Menu</span></button>
         <nav>
             <ul>
                 <li>
-                    <a id="home" href="./index.html">Pace</a>
+                    <a id="logo" href="./index.html">Pace</a>
                 </li>
-                <div class="nav-pages">
-                    <li>
+                <div id="nav-pages" data-visible="false">
+                    <li class="nav-page">
                         <a href="./run.html">Run</a>
                     </li>
-                    <li>
+                    <li class="nav-page">
                         <a href="./watch.html">Watch</a>
                     </li>
-                    <li>
+                    <li class="nav-page">
                         <a href="./about.html">About</a>
                     </li>
                 </div>

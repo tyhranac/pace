@@ -1,3 +1,6 @@
+/** fonts **/
+@import url('https://fonts.googleapis.com/css2?family=Permanent+Marker');
+
 /** 
 CSS resets
 - https://piccalil.li/blog/a-modern-css-reset/
@@ -11,15 +14,17 @@ CSS resets
 body {
     min-height: 100vh;
     text-rendering: optimizeSpeed;
-    line-height: 1.5;
+    /* line-height: 1.5; */
+    background-color: #efefd0;
 }
 
 a:not([class]) {
-    text-decoration-skip-ink: auto;
+    text-decoration: none;
+    color: inherit;
 }
 
-ul[role='list'],
-ol[role='list'] {
+ul,
+ol {
   list-style: none;
 }
 
@@ -31,4 +36,93 @@ ol[role='list'] {
 
 html:focus-within {
     scroll-behavior: smooth;
+}
+
+/**
+accessibility classes 
+- https://www.scottohara.me/blog/2017/04/14/inclusively-hidden.html
+*/
+
+.sr-only {
+    left: -100vw;
+    position: absolute;
+}
+
+/** header **/
+
+header {
+    color: #004e89;
+}
+
+nav > ul {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#nav-pages {
+    display: flex;
+
+    font-family: consolas, serif;
+    font-size: 1.25rem;
+}
+
+.nav-page {
+    margin-inline-end: 3rem;
+}
+
+#logo {
+    margin-inline-start: 20%;
+    font-family: 'Permanent Marker', Helvetica, sans-serif;
+    font-size: 3rem;
+}
+
+/** mobile **/
+
+@media (max-width: 35em) {
+    #nav-pages {
+        flex-direction: column;
+        position: fixed;
+        inset: 0 0 0 max(104px, 40%);
+        padding: min(30vh, 8rem) 2rem;
+        z-index: 1;
+
+        transform: translateX(100%);
+
+        background-color: rgba(26, 101, 158, 0.3);
+        backdrop-filter: blur(1rem);
+    }
+
+    #nav-pages[data-visible="true"] {
+        transform: translateX(0%);
+    }
+
+    .nav-page {
+        margin-block-end: 2rem;
+    }
+
+    .hamburger-menu {
+        position: absolute;
+        top: 1rem;
+        right: 1rem;
+
+        background: url("./assets/menu-icon.svg");
+        background-repeat: no-repeat;
+        border: 0;
+        width: 3rem;
+        aspect-ratio: 1;
+        z-index: 2;
+    }
+
+    .hamburger-menu[aria-expanded="true"] {
+        background: url("./assets/x-icon.svg");
+        background-repeat: none;
+    }
+}
+
+/** desktop **/
+@media (min-width: 35rem){
+    .hamburger-menu {
+        display: none;
+    }
 }
