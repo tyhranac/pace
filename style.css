@@ -88,8 +88,8 @@ nav > ul {
 
         transform: translateX(100%);
 
-        background-color: rgba(26, 101, 158, 0.3);
-        backdrop-filter: blur(1rem);
+        background-color: rgba(26, 101, 158, 0.5);
+        backdrop-filter: blur(0.5rem);
     }
 
     #nav-pages[data-visible="true"] {
