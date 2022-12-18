@@ -14,7 +14,7 @@ CSS resets
 body {
     min-height: 100vh;
     text-rendering: optimizeSpeed;
-    /* line-height: 1.5; */
+    font-family: consolas, serif;
     background-color: #efefd0;
 }
 
@@ -63,7 +63,6 @@ nav > ul {
 #nav-pages {
     display: flex;
 
-    font-family: consolas, serif;
     font-size: 1.25rem;
 }
 
@@ -77,7 +76,7 @@ nav > ul {
     font-size: 3rem;
 }
 
-/** mobile **/
+/** header - mobile **/
 
 @media (max-width: 35em) {
     #nav-pages {
@@ -120,9 +119,35 @@ nav > ul {
     }
 }
 
-/** desktop **/
+/** header - tablet, desktop **/
 @media (min-width: 35rem){
     .hamburger-menu {
         display: none;
     }
+}
+
+/** form **/
+
+form {
+    margin: 1rem;
+    padding: 1rem;
+    border: 0.25rem solid #1a659e;
+    border-radius: 0.25em;
+}
+
+form h2 {
+    font-size: 1.5rem;
+}
+
+form p {
+    font-size: 1rem;
+}
+
+.form-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 100vw;
+    height: calc(100vh - 70px);
 }

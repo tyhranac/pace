@@ -18,7 +18,7 @@
         <nav>
             <ul>
                 <li>
-                    <a id="logo" href="./index.html">Pace</a>
+                    <h1><a id="logo" href="./index.html">Pace</a></h1>
                 </li>
                 <div id="nav-pages" data-visible="false">
                     <li class="nav-page">
@@ -34,6 +34,35 @@
             </ul>
         </nav>
     </header>
-    
+    <div class="form-container">
+        <form>
+            <div class="form-info">
+                <h2>Calculate pace, time, or distance</h2>
+                <p>Enter any two to solve for the third (e.g. enter time and distance to solve for pace).</p> 
+            </div>
+            
+            <div class="form-dist-input">
+                <input type="number" placeholder="dist" name="distance" min="0">
+                <select name="units-dist" id="units-dist">
+                    <option value="kilometers">Kilometers</option>
+                    <option value="miles">Miles</option>
+                </select>
+            </div>
+            <div class="form-time-input">
+                <input type="number" placeholder="hrs" name="hours-time" min="0">
+                <input type="number" placeholder="mins" name="minutes-time" min="0" max="59">
+                <input type="number" placeholder="secs" name="seconds-time" min="0" max="59">
+            </div>
+            <div class="form-pace-input">
+                <input type="number" placeholder="hrs" name="hours-pace" min="0">
+                <input type="number" placeholder="mins" name="minutes-pace" min="0" max="59">
+                <input type="number" placeholder="secs" name="seconds-pace" min="0" max="59">
+                <select name="units-pace" id="units-pace">
+                    <option value="kilometers">Kilometers</option>
+                    <option value="miles">Miles</option>
+                </select>
+            </div>
+        </form>
+    </div>
 </body>
 </html>
