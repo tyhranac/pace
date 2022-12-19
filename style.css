@@ -74,6 +74,7 @@ nav > ul {
     margin-inline-start: 20%;
     font-family: 'Permanent Marker', Helvetica, sans-serif;
     font-size: 3rem;
+    color: #004e89;
 }
 
 /** header - mobile **/
@@ -136,21 +137,43 @@ form {
 
     margin: 1rem;
     padding: 1rem;
-    border: 0.25rem solid #1a659e;
+    border: 0.25rem solid #ff6b35;
     border-radius: 0.25em;
+}
+
+form input[type="submit"] {
+    padding: 13px 21px;
+    border: 3px solid #ff6b35;
+    border-radius: 0.25rem;
+    background-color: #f7c59f;
+    color: #004e89;
+    font-size: 1rem;
+    font-weight: bold;
+}
+
+form input[type="number"] {
+    width: 21%;
+    padding: 3px 5px;
+}
+
+form select {
+    width: 21%;
+    padding: 3px 5px;
 }
 
 form h2 {
     font-size: 1.5rem;
     padding-bottom: 0.5rem;
+    color: #004e89;
 }
 
 form p {
     font-size: 1rem;
+    color: #1a659e;
 }
 
 form div {
-    padding-bottom: 0.5rem;
+    padding-bottom: 1rem;
 }
 
 .form-container {
@@ -160,6 +183,10 @@ form div {
 
     width: 100vw;
     height: calc(100vh - 70px);
+}
+
+.form-info {
+    padding-bottom: 2rem;
 }
 
 .form-submit {
