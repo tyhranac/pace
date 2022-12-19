@@ -155,6 +155,8 @@ form input[type=number] {
     width: 18%;
     padding: 1% 2%;
     outline: none;
+    border: 2px solid #1a659e;
+    border-radius: 0.25rem;
 }
 
 form input[type=number]:focus {
@@ -165,6 +167,8 @@ form input[type=number]:focus {
 form select {
     width: 18%;
     padding: 1% 2%;
+    border: 2px solid #1a659e;
+    border-radius: 0.25rem;
 }
 
 form h2 {
