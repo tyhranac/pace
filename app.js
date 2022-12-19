@@ -93,7 +93,7 @@ form.addEventListener('submit', (event) => {
 
     // solve for pace
     if (valueEntered(distanceValues) && valueEntered(timeValues) && !valueEntered(paceValues)) {
-        let distance = parseInt(distanceValues[0]);
+        let distance = parseFloat(distanceValues[0]);
         console.log(distance);
         let time = timeToSeconds(timeValues);
         console.log(time);
