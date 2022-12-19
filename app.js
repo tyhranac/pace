@@ -86,21 +86,22 @@ form.addEventListener('submit', (event) => {
     const timeValues = {'hours': timeHours.value,
                         'minutes': timeMinutes.value,
                         'seconds': timeSeconds.value};
-    const paceValues = [paceHours.value, paceMinutes.value, paceSeconds.value];
+    const paceValues = {'hours': paceHours.value, 
+                        'minutes': paceMinutes.value, 
+                        'seconds': paceSeconds.value};
 
     const distanceUnitsValue = distanceUnits.value;
     const paceUnitsValue = paceUnits.value;
 
     // solve for pace
     if (valueEntered(distanceValues) && valueEntered(timeValues) && !valueEntered(paceValues)) {
-        // get distance and time values
-        let distance = parseFloat(distanceValues[0]);
+        // get time values
         let time = timeToSeconds(timeValues);
         // set pace units to match distance units
         paceUnits.value = distanceUnits.value;
 
         // solve for pace
-        let pace = calculatePace(time, distance);
+        let pace = calculatePace(time, parseFloat(distanceValues[0]));
 
         // parse pace in seconds to hours, minutes, seconds
         if ((pace / 3600) > 1) {
@@ -116,6 +117,18 @@ form.addEventListener('submit', (event) => {
         if (pace > 0) {
             paceSeconds.value = Math.round(pace);
         }
+    }
+
+    // solve for distance
+    if (valueEntered(timeValues) && valueEntered(paceValues) && !valueEntered(distanceValues)) {
+        // get time and pace values
+        let time = timeToSeconds(timeValues);
+        let pace = timeToSeconds(paceValues);
+        // set distance units to match pace units
+        distanceUnits.value = paceUnits.value;
+
+        // solve for distance
+        distance.value = calculateDistance(pace, time).toFixed(2);
     }
 
     // prevent reload
