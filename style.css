@@ -126,6 +126,11 @@ nav > ul {
     .hamburger-menu {
         display: none;
     }
+
+    .nav-page:hover {
+        cursor: pointer;
+        text-decoration: underline #ff6b35 solid 3px;
+    }
 }
 
 /** form **/
