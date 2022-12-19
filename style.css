@@ -198,6 +198,7 @@ form div {
 }
 
 #form-submit {
+    width: auto;
     padding: 13px 21px;
     border: 3px solid #ff6b35;
     border-radius: 0.25rem;
@@ -207,8 +208,8 @@ form div {
     font-weight: bold;
 }
 
-#form-submit {
-    width: auto;
+#form-submit:hover {
+    cursor: pointer;
 }
 
 /** color palette from https://coolors.co/palette/ff6b35-f7c59f-efefd0-004e89-1a659e **/
