@@ -129,6 +129,11 @@ nav > ul {
 /** form **/
 
 form {
+    display: flex;
+    flex-direction: column;
+    place-content: center;
+    /* grid-template: 20% 20% repeat(4, 1fr) / repeat(4, 1fr); */
+
     margin: 1rem;
     padding: 1rem;
     border: 0.25rem solid #1a659e;
@@ -158,5 +163,7 @@ form div {
 }
 
 .form-submit {
+    align-self: flex-end;
+
     padding-bottom: 0;
 }
