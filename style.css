@@ -158,7 +158,8 @@ form input[type=number] {
 }
 
 form input[type=number]:focus {
-    border: 2px solid #f7c59f;
+    border: 2px solid #ff6b35;
+    background-color: #f7c59f;
 }
 
 form select {
