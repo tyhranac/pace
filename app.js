@@ -53,6 +53,14 @@ const timeToSeconds = (timeValues) => {
     return timeInSeconds;
 }
 
+const kilometersToMiles = (kilometers) => {
+    return kilometers * 0.621371
+}
+
+const milesToKilometers = (miles) => {
+    return miles * 1.60934
+}
+
 const calculatePace = (time, distance) => {
     return time / distance;
 }
