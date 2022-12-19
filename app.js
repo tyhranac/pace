@@ -13,6 +13,16 @@ hamburgerMenu.addEventListener('click', () => {
 });
 
 // form
+const valueEntered = (values) => {
+    for (i=0; i<values.lenght; i++) {
+        if (values[i]) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+}
+
 const calculatePace = (time, distance) => {
     return time/distance;
 }
@@ -39,4 +49,13 @@ const submit = document.querySelector('#form-submit');
 
 form.addEventListener('submit', (event) => {
 
+    // get values from form elements
+    const distanceValues = [distance.value];
+    const timeValues = [timeHours.value, timeMinutes.value, timeSeconds.value];
+    const paceValues = [paceHours.value, paceMinutes.value, paceSeconds.value];
+
+    const distanceUnitsValue = distanceUnits.value;
+    const paceUnitsValue = paceUnits.value;
+
+    
 })
