@@ -13,18 +13,48 @@ hamburgerMenu.addEventListener('click', () => {
 });
 
 // form
+
+// helper functions
 const valueEntered = (values) => {
-    for (i=0; i<values.lenght; i++) {
-        if (values[i]) {
-            return true;
-        } else {
-            return false;
+    if (Array.isArray(values)) {
+        for (i=0; i<values.length; i++) {
+            if (values[i]) {
+                return true;
+            }
         }
+        return false;
+    } else {
+        for (let k in values) {
+            if (values[k]) {
+                return true;
+            }
+        }
+        return false;
     }
 }
 
+const timeToSeconds = (timeValues) => {
+    let timeInSeconds = 0;
+
+    for (let k in timeValues) {
+        if (timeValues[k]) {
+            switch (k) {
+                case 'hours':
+                    timeInSeconds += parseInt(timeValues[k]) * 3600;
+                    break;
+                case 'minutes':
+                    timeInSeconds += parseInt(timeValues[k]) * 60;
+                    break;
+                default:
+                    timeInSeconds += parseInt(timeValues[k]);
+            }
+        }
+    }
+    return timeInSeconds;
+}
+
 const calculatePace = (time, distance) => {
-    return time/distance;
+    return time / distance;
 }
 
 const calculateTime = (pace, distance) => {
@@ -32,9 +62,10 @@ const calculateTime = (pace, distance) => {
 }
 
 const calculateDistance = (pace, time) => {
-    return time/pace;
+    return time / pace;
 }
 
+// elements
 const form = document.querySelector('form');
 const distance = document.querySelector('#dist');
 const distanceUnits = document.querySelector('#units-dist');
@@ -47,15 +78,31 @@ const paceSeconds = document.querySelector('#pace-seconds');
 const paceUnits = document.querySelector('#units-pace');
 const submit = document.querySelector('#form-submit');
 
+// submit listener
 form.addEventListener('submit', (event) => {
 
     // get values from form elements
     const distanceValues = [distance.value];
-    const timeValues = [timeHours.value, timeMinutes.value, timeSeconds.value];
+    const timeValues = {'hours': timeHours.value,
+                        'minutes': timeMinutes.value,
+                        'seconds': timeSeconds.value};
     const paceValues = [paceHours.value, paceMinutes.value, paceSeconds.value];
 
     const distanceUnitsValue = distanceUnits.value;
     const paceUnitsValue = paceUnits.value;
 
-    
-})
+    // solve for pace
+    if (valueEntered(distanceValues) && valueEntered(timeValues) && !valueEntered(paceValues)) {
+        let distance = parseInt(distanceValues[0]);
+        console.log(distance);
+        let time = timeToSeconds(timeValues);
+        console.log(time);
+
+        const pace = calculatePace(time, distance);
+
+        console.log(pace);
+    }
+
+    // prevent reload
+    event.preventDefault();
+});
