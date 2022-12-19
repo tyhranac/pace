@@ -1,7 +1,8 @@
 /** fonts **/
 @import url('https://fonts.googleapis.com/css2?family=Permanent+Marker');
-
+@import url('https://fonts.googleapis.com/css2?family=Inconsolata');
 /** 
+
 CSS resets
 - https://piccalil.li/blog/a-modern-css-reset/
 **/
@@ -14,7 +15,7 @@ CSS resets
 body {
     min-height: 100vh;
     text-rendering: optimizeSpeed;
-    font-family: consolas, serif;
+    font-family: 'Inconsolata', monospace;
     background-color: #efefd0;
 }
 

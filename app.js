@@ -93,14 +93,14 @@ form.addEventListener('submit', (event) => {
 
     // solve for pace
     if (valueEntered(distanceValues) && valueEntered(timeValues) && !valueEntered(paceValues)) {
+        // get distance and time values
         let distance = parseFloat(distanceValues[0]);
-        console.log(distance);
         let time = timeToSeconds(timeValues);
-        console.log(time);
+        // set pace units to match distance units
+        paceUnits.value = distanceUnits.value;
 
+        // solve for pace
         let pace = calculatePace(time, distance);
-
-        console.log(pace);
 
         // parse pace in seconds to hours, minutes, seconds
         if ((pace / 3600) > 1) {
