@@ -11,3 +11,5 @@ hamburgerMenu.addEventListener('click', () => {
         hamburgerMenu.setAttribute('aria-expanded', 'false');
     }
 });
+
+// form calcs

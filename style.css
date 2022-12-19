@@ -141,17 +141,7 @@ form {
     border-radius: 0.25em;
 }
 
-form input[type=submit] {
-    padding: 13px 21px;
-    border: 3px solid #ff6b35;
-    border-radius: 0.25rem;
-    background-color: #f7c59f;
-    color: #004e89;
-    font-size: 1rem;
-    font-weight: bold;
-}
-
-form input[type=number] {
+form input {
     width: 18%;
     padding: 1% 2%;
     outline: none;
@@ -159,7 +149,7 @@ form input[type=number] {
     border-radius: 0.25rem;
 }
 
-form input[type=number]:focus {
+form input:focus {
     border: 2px solid #ff6b35;
     background-color: #f7c59f;
 }
@@ -177,7 +167,8 @@ form h2 {
     color: #004e89;
 }
 
-form p {
+form h3,
+p {
     font-size: 1rem;
     color: #1a659e;
 }
@@ -203,4 +194,18 @@ form div {
     align-self: flex-end;
 
     padding-bottom: 0;
+}
+
+#form-submit {
+    padding: 13px 21px;
+    border: 3px solid #ff6b35;
+    border-radius: 0.25rem;
+    background-color: #f7c59f;
+    color: #004e89;
+    font-size: 1rem;
+    font-weight: bold;
+}
+
+#form-submit {
+    width: auto;
 }

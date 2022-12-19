@@ -40,30 +40,42 @@
                 <h2>Calculate pace, time, or distance</h2>
                 <p>Enter any two to solve for the third (e.g. enter time and distance to solve for pace).</p> 
             </div>
-            
             <div class="form-dist-input">
-                <input type="number" placeholder="dist" name="distance" min="0">
+                <h3>Distance</h3>
+                <label for="dist"><span class="sr-only">Distance</span></label>
+                <input id="dist" type="number" placeholder="distance" name="distance" min="0">
+                <label for="units-dist"><span class="sr-only">Units</span></label>
                 <select name="units-dist" id="units-dist">
                     <option value="miles">Miles</option>
                     <option value="kilometers">Kilometers</option>
                 </select>
             </div>
             <div class="form-time-input">
-                <input type="number" placeholder="hrs" name="hours-time" min="0">
-                <input type="number" placeholder="mins" name="minutes-time" min="0" max="59">
-                <input type="number" placeholder="secs" name="seconds-time" min="0" max="59">
+                <h3>Time</h3>
+                <label for="time-hours"><span class="sr-only">Hours</span></label>
+                <input id="time-hours" type="number" placeholder="hours" name="hours-time" min="0">
+                <label for="time-minutes"><span class="sr-only">Minutes</span></label>
+                <input id="time-minutes" type="number" placeholder="minutes" name="minutes-time" min="0" max="59">
+                <label for="time-seconds"><span class="sr-only">Seconds</span></label>
+                <input id="time-seconds" type="number" placeholder="seconds" name="seconds-time" min="0" max="59">
             </div>
             <div class="form-pace-input">
-                <input type="number" placeholder="hrs" name="hours-pace" min="0">
-                <input type="number" placeholder="mins" name="minutes-pace" min="0" max="59">
-                <input type="number" placeholder="secs" name="seconds-pace" min="0" max="59">
+                <h3>Pace</h3>
+                <label for="pace-hours"><span class="sr-only">Hours</span></label>
+                <input id="pace-hours" type="number" placeholder="hours" name="hours-pace" min="0">
+                <label for="pace-minutes"><span class="sr-only">Minutes</span></label>
+                <input id="pace-minutes" type="number" placeholder="minutes" name="minutes-pace" min="0" max="59">
+                <label for="pace-seconds"><span class="sr-only">Seconds</span></label>
+                <input id="pcae-seconds" type="number" placeholder="seconds" name="seconds-pace" min="0" max="59">
+                <label for="units-pace"><span class="sr-only"><span class="sr-only">Units</span></span></label>
                 <select name="units-pace" id="units-pace">
                     <option value="miles">Miles</option>
                     <option value="kilometers">Kilometers</option>
                 </select>
             </div>
             <div class="form-submit">
-                <input type="submit">
+                <label><span class="sr-only">Submit</span></label>
+                <input id="form-submit" type="submit">
             </div>
         </form>
     </div>
