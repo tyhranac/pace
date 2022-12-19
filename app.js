@@ -98,9 +98,24 @@ form.addEventListener('submit', (event) => {
         let time = timeToSeconds(timeValues);
         console.log(time);
 
-        const pace = calculatePace(time, distance);
+        let pace = calculatePace(time, distance);
 
         console.log(pace);
+
+        // parse pace in seconds to hours, minutes, seconds
+        if ((pace / 3600) > 1) {
+            pace = pace / 3600;
+            paceHours.value = Math.floor(pace);
+            pace = (pace % 1) * 3600;
+        }
+        if ((pace  / 60 ) > 1) {
+            pace = pace / 60;
+            paceMinutes.value = Math.floor(pace);
+            pace = (pace % 1) * 60;
+        }
+        if (pace > 0) {
+            paceSeconds.value = Math.round(pace);
+        }
     }
 
     // prevent reload
