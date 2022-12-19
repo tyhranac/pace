@@ -152,8 +152,8 @@ form input[type=submit] {
 }
 
 form input[type=number] {
-    width: 21%;
-    padding: 3px 5px;
+    width: 18%;
+    padding: 1% 2%;
     outline: none;
 }
 
@@ -162,8 +162,8 @@ form input[type=number]:focus {
 }
 
 form select {
-    width: 21%;
-    padding: 3px 5px;
+    width: 18%;
+    padding: 1% 2%;
 }
 
 form h2 {
