@@ -232,18 +232,23 @@ form div {
     color: #004e89;
 }
 
-.highlight-text {
-    text-decoration: underline #ff6b35 dotted 3px;
-}
-
 /** about page - mobile **/
 
 @media (max-width: 35em) {
     .about-text-container {
         display: flex;
         flex-direction: column;
-        gap: 1rem;
-        margin: 1rem;
+        gap: 1.5rem;
+        margin: 1.5rem;
+    }
+
+    h2 > .highlight-text {
+        text-decoration: underline #ff6b35 wavy 3px;
+        text-underline-offset: 5px;
+    }
+    
+    h3 > .highlight-text {
+        text-decoration: underline #ff6b35 solid 3px;
     }
 }
 
