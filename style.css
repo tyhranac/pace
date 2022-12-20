@@ -204,24 +204,42 @@ form div {
     padding-bottom: 2rem;
 }
 
-.form-submit {
+.form-buttons {
+    display: flex;
     align-self: flex-end;
+    gap: 0.5rem;
 
     padding-bottom: 0;
 }
 
-#form-submit {
+.form-submit,
+.form-reset {
+    padding-bottom: 0;
+}
+
+#form-submit,
+#form-reset {
     width: auto;
     padding: 8px 13px;
-    border: 3px solid #ff6b35;
     border-radius: 0.25rem;
-    background-color: #f7c59f;
-    color: #004e89;
     font-size: 1rem;
     font-weight: bold;
 }
 
-#form-submit:hover {
+#form-submit {
+    background-color: #f7c59f;
+    color: #004e89;
+    border: 3px solid #ff6b35;
+}
+
+#form-reset {
+    background-color: grey;
+    color: whitesmoke;
+    border: 3px solid black;
+}
+
+#form-submit:hover, 
+#form-reset:hover {
     cursor: pointer;
 }
 

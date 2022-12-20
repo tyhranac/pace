@@ -11,7 +11,7 @@
     <!--import scripts-->
     <script src="./app.js" defer></script>
     <script src="./responsive.js" defer></script>
-    
+
     <title>Pace</title>
 </head>
 <body>
@@ -75,9 +75,15 @@
                     <option value="kilometers">Kilometers</option>
                 </select>
             </div>
-            <div class="form-submit">
-                <label><span class="sr-only">Submit</span></label>
-                <input id="form-submit" type="submit" value="Solve">
+            <div class="form-buttons">
+                <div class="form-reset">
+                    <label><span class="sr-only">Clear</span></label>
+                    <input id="form-reset" type="reset" value="Clear">
+                </div>
+                <div class="form-submit">
+                    <label><span class="sr-only">Solve</span></label>
+                    <input id="form-submit" type="submit" value="Solve">
+                </div>
             </div>
         </form>
     </div>
