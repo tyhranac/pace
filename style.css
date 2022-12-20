@@ -136,7 +136,7 @@ nav > ul {
 
 /** header - tablet, desktop **/
 
-@media (min-width: 35rem){
+@media (min-width: 35rem) {
     .hamburger-menu {
         display: none;
     }
@@ -287,6 +287,7 @@ h3 > .highlight-text {
 }
 
 /** about page - tablet, desktop **/
+
 @media (min-width: 35em) {
     .about-text-container {
         margin: 5rem;
