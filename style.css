@@ -303,4 +303,35 @@ h3 > .highlight-text {
     }
 }
 
+/** run page styling **/
+
+.runs-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    min-height: calc(100vh - 70px);
+    margin-left: 13%;
+    margin-right: 13%;
+}
+
+.runs-container > div {
+    border-radius: 1rem;
+    height: calc((100vh - 70px) / 4);
+}
+
+.run-one {
+    background-color:#f7c59f;
+    border:#ff6b35 solid 3px;
+}
+
+.run-two {
+    background-color: whitesmoke;
+    border: black solid 3px;
+}
+
+.run-three {
+    background-color: #1a659e;
+    border: #004e89 solid 3px;;
+}
+
 /** color palette from https://coolors.co/palette/ff6b35-f7c59f-efefd0-004e89-1a659e **/
