@@ -73,6 +73,25 @@ const calculateDistance = (pace, time) => {
     return time / pace;
 }
 
+const parseSeconds = (t) => {
+    // parse pace in seconds to hours, minutes, seconds
+    hms = {}
+    if ((t / 3600) > 1) {
+        t = t / 3600;
+        hms['hours'] = Math.floor(t);
+        t = (t % 1) * 3600;
+    }
+    if ((t  / 60 ) > 1) {
+        t = t / 60;
+        hms['minutes'] = Math.floor(t);
+        t = (t % 1) * 60;
+    }
+    if (t > 0) {
+        hms['seconds'] = Math.round(t);
+    }
+    return hms;
+}
+
 // elements
 const form = document.querySelector('form');
 const distance = document.querySelector('#dist');
@@ -112,18 +131,17 @@ form.addEventListener('submit', (event) => {
         let pace = calculatePace(time, parseFloat(distanceValues[0]));
 
         // parse pace in seconds to hours, minutes, seconds
-        if ((pace / 3600) > 1) {
-            pace = pace / 3600;
-            paceHours.value = Math.floor(pace);
-            pace = (pace % 1) * 3600;
+        const hms = parseSeconds(pace);
+
+        // populate form inputs
+        if ('hours' in hms) {
+            paceHours.value = hms.hours;
         }
-        if ((pace  / 60 ) > 1) {
-            pace = pace / 60;
-            paceMinutes.value = Math.floor(pace);
-            pace = (pace % 1) * 60;
+        if ('minutes' in hms) {
+            paceMinutes.value = hms.minutes;
         }
-        if (pace > 0) {
-            paceSeconds.value = Math.round(pace);
+        if ('seconds' in hms) {
+            paceSeconds.value = hms.seconds;
         }
     }
 
@@ -137,6 +155,42 @@ form.addEventListener('submit', (event) => {
 
         // solve for distance
         distance.value = calculateDistance(pace, time).toFixed(2);
+    }
+
+    // solve for time
+    if (valueEntered(distanceValues) && valueEntered(paceValues) && !valueEntered(timeValues)) {
+        // get pace values
+        let pace = timeToSeconds(paceValues);
+        let time = 0;
+        
+        switch (distanceUnitsValue == paceUnitsValue) {
+            case true:
+                time = calculateTime(pace, parseFloat(distanceValues[0]));
+                break;
+            case false:
+                if (distanceUnitsValue == 'miles') {
+                    time = calculateTime(pace, milesToKilometers(parseFloat(distanceValues[0])));
+                } else {
+                    time = calculateTime(pace, kilometersToMiles(parseFloat(distanceValues[0])));
+                }
+                break;
+            default:
+                console.log('Error: Missing units for distance and/or pace');
+        }
+        console.log(time);
+        // parse time in seconds to hours, minutes, seconds
+        const hms = parseSeconds(time);
+
+        // populate form inputs
+        if ('hours' in hms) {
+            timeHours.value = hms.hours;
+        }
+        if ('minutes' in hms) {
+            timeMinutes.value = hms.minutes;
+        }
+        if ('seconds' in hms) {
+            timeSeconds.value = hms.seconds;
+        }
     }
 
     // prevent reload
