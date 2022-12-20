@@ -78,6 +78,10 @@ nav > ul {
     color: #004e89;
 }
 
+#current {
+    color: #ff6b35;
+}
+
 /** header - mobile **/
 
 @media (max-width: 35em) {
