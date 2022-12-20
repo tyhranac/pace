@@ -1,8 +1,9 @@
 /** fonts **/
+
 @import url('https://fonts.googleapis.com/css2?family=Permanent+Marker');
 @import url('https://fonts.googleapis.com/css2?family=Inconsolata');
-/** 
 
+/** 
 CSS resets
 - https://piccalil.li/blog/a-modern-css-reset/
 **/
@@ -53,7 +54,11 @@ accessibility classes
     position: absolute;
 }
 
-/** header **/
+/** 
+header 
+- header heavily based on Kevin Powell's https://youtu.be/HbBMp6yUXO0
+**/
+
 
 header {
     color: #004e89;
