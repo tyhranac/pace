@@ -29,6 +29,10 @@ ol {
   list-style: none;
 }
 
+em {
+    font-style: normal;
+}
+
 @media (prefers-reduced-motion: reduce) {
     html:focus-within {
      scroll-behavior: auto;
@@ -254,7 +258,12 @@ form div {
 
 /** about page - tablet, desktop **/
 @media (min-width: 35em) {
-    
+    .about-text-container {
+        display: flex;
+        flex-direction: column;
+        gap: 1.5rem;
+        margin: 1.5rem;
+    }
 }
 
 /** color palette from https://coolors.co/palette/ff6b35-f7c59f-efefd0-004e89-1a659e **/
