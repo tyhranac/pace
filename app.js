@@ -1,6 +1,8 @@
 // form
 
 // helper functions
+
+// return true if form section has any values entered
 const valueEntered = (values) => {
     if (Array.isArray(values)) {
         for (i=0; i<values.length; i++) {
@@ -19,6 +21,7 @@ const valueEntered = (values) => {
     }
 }
 
+// convert hours, minutes, seconds to seconds
 const timeToSeconds = (timeValues) => {
     let timeInSeconds = 0;
 
@@ -59,8 +62,8 @@ const calculateDistance = (pace, time) => {
     return time / pace;
 }
 
+// parse pace in seconds to hours, minutes, seconds
 const parseSeconds = (t) => {
-    // parse pace in seconds to hours, minutes, seconds
     hms = {}
     if ((t / 3600) > 1) {
         t = t / 3600;
@@ -78,7 +81,7 @@ const parseSeconds = (t) => {
     return hms;
 }
 
-// elements
+// select elements
 const form = document.querySelector('form');
 const distance = document.querySelector('#dist');
 const distanceUnits = document.querySelector('#units-dist');
@@ -110,6 +113,7 @@ form.addEventListener('submit', (event) => {
     if (valueEntered(distanceValues) && valueEntered(timeValues) && !valueEntered(paceValues)) {
         // get time values
         let time = timeToSeconds(timeValues);
+        
         // set pace units to match distance units
         paceUnits.value = distanceUnits.value;
 
@@ -133,6 +137,7 @@ form.addEventListener('submit', (event) => {
         // get time and pace values
         let time = timeToSeconds(timeValues);
         let pace = timeToSeconds(paceValues);
+
         // set distance units to match pace units
         distanceUnits.value = paceUnits.value;
 
