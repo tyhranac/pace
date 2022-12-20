@@ -303,9 +303,9 @@ h3 > .highlight-text {
     }
 }
 
-/** run page styling **/
+/** general content styling for run.html and watch.html **/
 
-.runs-container {
+.content-container {
     display: flex;
     flex-direction: column;
     justify-content: space-around;
@@ -314,60 +314,60 @@ h3 > .highlight-text {
     margin-right: 13%;
 }
 
-.runs-container div {
+.content-container div {
     border-radius: 1rem;
     height: calc((100vh - 70px) / 4);
 }
 
-.run-one {
+.content-one {
     background-color:#f7c59f;
     border:#ff6b35 solid 3px;
     color:#004e89;
 }
 
-.run-two {
+.content-two {
     background-color: gray;
     border: black solid 3px;
     color: whitesmoke;
 }
 
-.run-three {
+.content-three {
     background-color: #1a659e;
     border: #004e89 solid 3px;
     color:#f7c59f;
 }
 
-/** run page - mobile **/
+/** content - mobile **/
 
 @media (max-width: 35rem) {
-    .runs-container div {
+    .content-container div {
         display: flex;
         justify-content: center;
         align-items: center;
     }
 
-    .runs-container img {
+    .content-container img {
         place-self: center;
         max-width: 90%;
         max-height: 70%;
     }
 
-    .run h3,
-    .run p {
+    .content h3,
+    .content p {
         display: none;
     }
 }
 
-/** run page - tablet, desktop **/
+/** content - tablet, desktop **/
 
 @media (min-width: 35rem) {
-    .runs-container div {
+    .content-container div {
         display: grid;
         grid-template-columns: 33% 66%;
         grid-template-rows: 33% 66%;
     }
 
-    .runs-container img {
+    .content-container img {
         grid-area: 1 / 1 / span 2 / span 1;
         place-self: center;
         margin-right: 1rem;
@@ -375,14 +375,14 @@ h3 > .highlight-text {
         max-height: 70%;
     }
 
-    .runs-container h3 {
+    .content-container h3 {
         grid-area: 1 / 2 / span 1 / span 2;
         align-self: end;
         margin-bottom: 1rem;
         margin-right: 1rem;
     }
 
-    .runs-container p {
+    .content-container p {
         grid-area: 2 / 2 / span 1 / span 1;
         margin-right: 1rem;
     }
