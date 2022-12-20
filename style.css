@@ -187,7 +187,7 @@ form h2 {
 }
 
 form h3,
-p {
+form p {
     font-size: 1rem;
     color: #1a659e;
 }
@@ -314,7 +314,7 @@ h3 > .highlight-text {
     margin-right: 13%;
 }
 
-.runs-container > div {
+.runs-container div {
     border-radius: 1rem;
     height: calc((100vh - 70px) / 4);
 }
@@ -322,16 +322,68 @@ h3 > .highlight-text {
 .run-one {
     background-color:#f7c59f;
     border:#ff6b35 solid 3px;
+    color:#004e89;
 }
 
 .run-two {
     background-color: gray;
     border: black solid 3px;
+    color: whitesmoke;
 }
 
 .run-three {
     background-color: #1a659e;
-    border: #004e89 solid 3px;;
+    border: #004e89 solid 3px;
+    color:#f7c59f;
+}
+
+/** run page - mobile **/
+
+@media (max-width: 35rem) {
+    .runs-container div {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .runs-container img {
+        place-self: center;
+        max-width: 90%;
+        max-height: 70%;
+    }
+
+    .run h3,
+    .run p {
+        display: none;
+    }
+}
+
+/** run page - tablet, desktop **/
+
+@media (min-width: 35rem) {
+    .runs-container div {
+        display: grid;
+        grid-template-columns: 33% 66%;
+        grid-template-rows: 33% 66%;
+    }
+
+    .runs-container img {
+        grid-area: 1 / 1 / span 2 / span 1;
+        place-self: center;
+        margin-right: 1rem;
+        max-width: 70%;
+        max-height: 70%;
+    }
+
+    .runs-container h3 {
+        grid-area: 1 / 2 / span 1 / span 2;
+        align-self: end;
+        margin-bottom: 1rem;
+    }
+
+    .runs-container p {
+        grid-area: 2 / 2 / span 1 / span 1;
+    }
 }
 
 /** color palette from https://coolors.co/palette/ff6b35-f7c59f-efefd0-004e89-1a659e **/
