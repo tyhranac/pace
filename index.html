@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!--import styles-->
+    <link href="./style.css" rel="stylesheet">
+
+    <!--import scripts-->
+    <script src="./app.js" defer></script>
+    <script src="./responsive.js" defer></script>
+
+    <title>Pace</title>
+</head>
+<body>
+    <!-- header heavily based on Kevin Powell's https://youtu.be/HbBMp6yUXO0 -->
+    <header>
+        <button class="hamburger-menu" aria-controls="nav-pages" aria-expanded="false"><span class="sr-only">Menu</span></button>
+        <nav>
+            <ul>
+                <li>
+                    <h1><a id="logo" href="./index.html">Pace</a></h1>
+                </li>
+                <div id="nav-pages" data-visible="false">
+                    <li class="nav-page">
+                        <a href="./pages/run.html">Run</a>
+                    </li>
+                    <li class="nav-page">
+                        <a href="./pages/watch.html">Watch</a>
+                    </li>
+                    <li class="nav-page">
+                        <a href="./pages/about.html">About</a>
+                    </li>
+                </div>
+            </ul>
+        </nav>
+    </header>
+    <div class="form-container">
+        <form>
+            <div class="form-info">
+                <h2>Calculate pace, time, or distance</h2>
+                <p>Enter any two to solve for the third (e.g. enter time and distance to solve for pace).</p> 
+            </div>
+            <div class="form-dist-input">
+                <h3>Distance</h3>
+                <label for="dist"><span class="sr-only">Distance</span></label>
+                <input id="dist" type="number" step="0.01" placeholder="distance" name="distance" min="0">
+                <label for="units-dist"><span class="sr-only">Units</span></label>
+                <select name="units-dist" id="units-dist">
+                    <option value="miles">Miles</option>
+                    <option value="kilometers">Kilometers</option>
+                </select>
+            </div>
+            <div class="form-time-input">
+                <h3>Time</h3>
+                <label for="time-hours"><span class="sr-only">Hours</span></label>
+                <input id="time-hours" type="number" placeholder="hours" name="hours-time" min="0">
+                <label for="time-minutes"><span class="sr-only">Minutes</span></label>
+                <input id="time-minutes" type="number" placeholder="minutes" name="minutes-time" min="0" max="59">
+                <label for="time-seconds"><span class="sr-only">Seconds</span></label>
+                <input id="time-seconds" type="number" placeholder="seconds" name="seconds-time" min="0" max="59">
+            </div>
+            <div class="form-pace-input">
+                <h3>Pace</h3>
+                <label for="pace-hours"><span class="sr-only">Hours</span></label>
+                <input id="pace-hours" type="number" placeholder="hours" name="hours-pace" min="0">
+                <label for="pace-minutes"><span class="sr-only">Minutes</span></label>
+                <input id="pace-minutes" type="number" placeholder="minutes" name="minutes-pace" min="0" max="59">
+                <label for="pace-seconds"><span class="sr-only">Seconds</span></label>
+                <input id="pace-seconds" type="number" placeholder="seconds" name="seconds-pace" min="0" max="59">
+                <label for="units-pace"><span class="sr-only"><span class="sr-only">Units</span></span></label>
+                <select name="units-pace" id="units-pace">
+                    <option value="miles">Miles</option>
+                    <option value="kilometers">Kilometers</option>
+                </select>
+            </div>
+            <div class="form-buttons">
+                <div class="form-reset">
+                    <label><span class="sr-only">Clear</span></label>
+                    <input id="form-reset" type="reset" value="Clear">
+                </div>
+                <div class="form-submit">
+                    <label><span class="sr-only">Solve</span></label>
+                    <input id="form-submit" type="submit" value="Solve">
+                </div>
+            </div>
+        </form>
+    </div>
+</body>
+</html>

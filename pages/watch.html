@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!--import styles-->
+    <link href="../style.css" rel="stylesheet">
+
+    <!--import scripts-->
+    <script src="../responsive.js" defer></script>
+    
+    <title>Pace: Watch</title>
+</head>
+<body>
+    <!-- header heavily based on Kevin Powell's https://youtu.be/HbBMp6yUXO0 -->
+    <header>
+        <button class="hamburger-menu" aria-controls="nav-pages" aria-expanded="false"><span class="sr-only">Menu</span></button>
+        <nav>
+            <ul>
+                <li>
+                    <h1><a id="logo" href="../index.html">Pace</a></h1>
+                </li>
+                <div id="nav-pages" data-visible="false">
+                    <li class="nav-page">
+                        <a href="./run.html">Run</a>
+                    </li>
+                    <li class="nav-page">
+                        <a id="current" href="./watch.html">Watch</a>
+                    </li>
+                    <li class="nav-page">
+                        <a href="./about.html">About</a>
+                    </li>
+                </div>
+            </ul>
+        </nav>
+    </header>
+    <div class="content-container">
+        <a href="https://www.flotrack.org/" target="_blank">
+            <div class="content content-one">
+                <img src="../assets/flotrack.jpg" alt="FloTrack logo">
+                <h3>FloTrack</h3>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+            </div>
+        </a>
+        <a href="https://www.peacocktv.com/sports/track-field" target="_blank">
+            <div class="content content-two">
+                <img src="../assets/peacock.png" alt="Peacock TV logo">
+                <h3>Peacock</h3>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+            </div>
+        </a>
+        <a href="https://www.espn.com/" target="_blank">
+            <div class="content content-three">
+                <img src="../assets/espn.png" alt="Boston Marathon logo">
+                <h3>ESPN</h3>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+            </div>
+        </a>
+    </div>
+</body>
+</html>
