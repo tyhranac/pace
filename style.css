@@ -379,10 +379,12 @@ h3 > .highlight-text {
         grid-area: 1 / 2 / span 1 / span 2;
         align-self: end;
         margin-bottom: 1rem;
+        margin-right: 1rem;
     }
 
     .runs-container p {
         grid-area: 2 / 2 / span 1 / span 1;
+        margin-right: 1rem;
     }
 }
 
