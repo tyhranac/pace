@@ -136,7 +136,7 @@ nav > ul {
         display: none;
     }
 
-    .nav-page:hover {
+    .nav-page > a:hover {
         cursor: pointer;
         text-decoration: underline #ff6b35 solid 3px;
     }
@@ -273,7 +273,7 @@ form div {
 
 h2 > .highlight-text {
     text-decoration: underline #ff6b35 wavy 3px;
-    text-underline-offset: 5px;
+    text-underline-offset: 8px;
 }
     
 h3 > .highlight-text {
