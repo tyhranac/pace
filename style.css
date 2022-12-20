@@ -258,6 +258,7 @@ h2 > .highlight-text {
     
 h3 > .highlight-text {
     text-decoration: underline #ff6b35 solid 3px;
+    text-underline-offset: 5px;
 }
 
 /** about page - tablet, desktop **/
