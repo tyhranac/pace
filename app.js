@@ -143,10 +143,7 @@ form.addEventListener('submit', (event) => {
         if ('seconds' in hms) {
             paceSeconds.value = hms.seconds;
         }
-    }
-
-    // solve for distance
-    if (valueEntered(timeValues) && valueEntered(paceValues) && !valueEntered(distanceValues)) {
+    } else if (valueEntered(timeValues) && valueEntered(paceValues) && !valueEntered(distanceValues)) { // solve for distance
         // get time and pace values
         let time = timeToSeconds(timeValues);
         let pace = timeToSeconds(paceValues);
@@ -155,10 +152,7 @@ form.addEventListener('submit', (event) => {
 
         // solve for distance
         distance.value = calculateDistance(pace, time).toFixed(2);
-    }
-
-    // solve for time
-    if (valueEntered(distanceValues) && valueEntered(paceValues) && !valueEntered(timeValues)) {
+    } else if (valueEntered(distanceValues) && valueEntered(paceValues) && !valueEntered(timeValues)) { // solve for time
         // get pace values
         let pace = timeToSeconds(paceValues);
         let time = 0;
@@ -191,6 +185,8 @@ form.addEventListener('submit', (event) => {
         if ('seconds' in hms) {
             timeSeconds.value = hms.seconds;
         }
+    } else {
+        console.log('Make sure form fields are filled out properly.');
     }
 
     // prevent reload
