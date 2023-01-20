@@ -106,6 +106,7 @@ nav > ul {
 
         background-color: rgba(26, 101, 158, 0.5);
         backdrop-filter: blur(0.5rem);
+        -webkit-backdrop-filter: blur(0.5rem);
     }
 
     #nav-pages[data-visible="true"] {
