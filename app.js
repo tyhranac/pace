@@ -1,6 +1,4 @@
-// form
-
-// helper functions
+// form - helper functions
 
 // return true if form section has any values entered
 const valueEntered = (values) => {
@@ -63,20 +61,20 @@ const calculateDistance = (pace, time) => {
 }
 
 // parse pace in seconds to hours, minutes, seconds
-const parseSeconds = (t) => {
+const parseSeconds = (time) => {
     hms = {}
-    if ((t / 3600) > 1) {
-        t = t / 3600;
-        hms['hours'] = Math.floor(t);
-        t = (t % 1) * 3600;
+    if ((time / 3600) > 1) {
+        time = time / 3600;
+        hms['hours'] = Math.floor(time);
+        time = (time % 1) * 3600;
     }
-    if ((t  / 60 ) > 1) {
-        t = t / 60;
-        hms['minutes'] = Math.floor(t);
-        t = (t % 1) * 60;
+    if ((time  / 60 ) > 1) {
+        time = time / 60;
+        hms['minutes'] = Math.floor(time);
+        time = (time % 1) * 60;
     }
-    if (t > 0) {
-        hms['seconds'] = Math.round(t);
+    if (time > 0) {
+        hms['seconds'] = Math.round(time);
     }
     return hms;
 }
