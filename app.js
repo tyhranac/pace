@@ -107,16 +107,24 @@ form.addEventListener('submit', (event) => {
     const distanceUnitsValue = distanceUnits.value;
     const paceUnitsValue = paceUnits.value;
 
-    // solve for pace
     if (valueEntered(distanceValues) && valueEntered(timeValues) && !valueEntered(paceValues)) {
-        // get time values
         let time = timeToSeconds(timeValues);
-        
-        // set pace units to match distance units
-        paceUnits.value = distanceUnits.value;
+        let pace = 0;
 
-        // solve for pace
-        let pace = calculatePace(time, parseFloat(distanceValues[0]));
+        switch (distanceUnitsValue == paceUnitsValue) {
+            case true:
+                pace = calculatePace(time, parseFloat(distanceValues[0]))
+                break;
+            case false:
+                if (distanceUnitsValue == 'miles') {
+                    pace = calculatePace(time, milesToKilometers(parseFloat(distanceValues[0])));
+                } else {
+                    pace = calculatePace(time, kilometersToMiles(parseFloat(distanceValues[0])));
+                }
+                break;
+            default:
+                console.log('Error: Missing units for distance and/or pace');
+        }
 
         // parse pace in seconds to hours, minutes, seconds
         const hms = parseSeconds(pace);
@@ -131,17 +139,27 @@ form.addEventListener('submit', (event) => {
         if ('seconds' in hms) {
             paceSeconds.value = hms.seconds;
         }
-    } else if (valueEntered(timeValues) && valueEntered(paceValues) && !valueEntered(distanceValues)) { // solve for distance
+    } else if (valueEntered(timeValues) && valueEntered(paceValues) && !valueEntered(distanceValues)) {
         // get time and pace values
         let time = timeToSeconds(timeValues);
         let pace = timeToSeconds(paceValues);
+        let d = calculateDistance(pace, time);
 
-        // set distance units to match pace units
-        distanceUnits.value = paceUnits.value;
-
-        // solve for distance
-        distance.value = calculateDistance(pace, time).toFixed(2);
-    } else if (valueEntered(distanceValues) && valueEntered(paceValues) && !valueEntered(timeValues)) { // solve for time
+        switch (distanceUnitsValue == paceUnitsValue) {
+            case true:
+                distance.value = d.toFixed(2);
+                break;
+            case false:
+                if (distanceUnitsValue == 'miles') {
+                    distance.value = kilometersToMiles(d).toFixed(2);
+                } else {
+                    distance.value = milesToKilometers(d).toFixed(2);
+                }
+                break;
+            default:
+                console.log('Error: Missing units for distance and/or pace');
+        }
+    } else if (valueEntered(distanceValues) && valueEntered(paceValues) && !valueEntered(timeValues)) {
         // get pace values
         let pace = timeToSeconds(paceValues);
         let time = 0;
@@ -160,7 +178,6 @@ form.addEventListener('submit', (event) => {
             default:
                 console.log('Error: Missing units for distance and/or pace');
         }
-        console.log(time);
         // parse time in seconds to hours, minutes, seconds
         const hms = parseSeconds(time);
 
